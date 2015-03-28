@@ -2,12 +2,13 @@
 <html lang="es">
  <head>
   <meta http-equiv='Content-type' content='text/html; charset=<?php echo APP_CHARSET ?>' />
-  <title>KumbiaPHP web &amp; App Framework</title>
+  <title>UMB-GPS</title>
   <?php Tag::css('bienvenida') ?>
   <?php Tag::css('style') ?>
   <?php echo Html::includeCss() ?>
+  
 </head>
-<body>
+<body onload="initialize()">
     <div id='content'>
         <div id='head'>
             <div class='alignright'>
@@ -17,11 +18,11 @@
                 </p>
              </div>
              
-            <h1 id='logo'>KumbiaPHP</h1>
-            <h2 id='info-app'>web &amp; app Framework versión <?php echo kumbia_version() ?></h2>
+            
         </div>
 
         <?php View::content(); ?>
+        
 
         <?php View::partial('kumbia/footer') ?>
     </div>

@@ -11,9 +11,13 @@
  *
  * @author Cristhian
  */
+Load::models("ubicacion");
 class MapaController extends AppController {
     //put your code here
     function index(){
+        $ubi = new Ubicacion();
+        $this->arr = array();
+        $this->arr = $ubi->find();
         
     }
 }

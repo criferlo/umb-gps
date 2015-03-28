@@ -1,0 +1,39 @@
+<style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+<script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCwLrc2sQZ5d1krWkkczp45sYnpiRio-tI&sensor=false">
+</script>
+
+<script type="text/javascript">
+    function initialize() {
+        
+        var mapOptions = {
+            center: new google.maps.LatLng(4.907977, -74.031413),
+            zoom: 12,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+                mapOptions);
+        
+        <?php foreach($arr as $obj){?>
+        
+            
+            var myLatlng = new google.maps.LatLng(<?php echo $obj->latitud?>, <?php echo $obj->longitud?>);
+            var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'Hello World!'
+            });
+            
+           
+        
+        <?php }?>         
+    }
+</script>
+
+
+<div id="map_canvas" style="width:500px; height:500px"></div>
+
